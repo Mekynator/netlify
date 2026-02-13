@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Layerloot • Account</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<script>
+  window.__SUPABASE_URL__ = "PASTE_YOUR_SUPABASE_URL";
+  window.__SUPABASE_ANON_KEY__ = "PASTE_YOUR_SUPABASE_ANON_KEY";
+</script>
+
+<header class="header">
+  <div class="wrap header-row">
+    <div class="brand" onclick="location.href='/'" style="cursor:pointer">
+      <div class="logo">L</div>
+      <div><div class="brand-name">Layerloot</div><div class="brand-sub">Account</div></div>
+    </div>
+    <div class="actions">
+      <button class="ghost" onclick="location.href='/catalog.html'">Catalog</button>
+      <button class="ghost" id="btnLogout">Logout</button>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="wrap nav-row">
+      <a class="nav-link" data-nav href="/catalog.html">Catalog</a>
+      <a class="nav-link" data-nav href="/how-it-works.html">How it works</a>
+      <a class="nav-link" data-nav href="/faq.html">FAQ</a>
+      <a class="nav-link highlight" data-nav href="/custom.html">Custom Order</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap section">
+  <div class="card">
+    <div class="card-title">Account</div>
+    <div class="muted" id="status">Checking session…</div>
+
+    <div class="form-row" style="margin-top:14px">
+      <div>
+        <div class="card-title" style="font-size:14px">Login</div>
+        <label>Email</label>
+        <input id="loginEmail" placeholder="you@email.com"/>
+        <label>Password</label>
+        <input id="loginPass" type="password" placeholder="••••••"/>
+        <button class="primary" id="btnLogin" style="margin-top:10px">Login</button>
+        <div class="muted" id="loginMsg"></div>
+      </div>
+
+      <div>
+        <div class="card-title" style="font-size:14px">Register</div>
+        <label>Name</label>
+        <input id="regName" placeholder="Your name"/>
+        <label>Email</label>
+        <input id="regEmail" placeholder="you@email.com"/>
+        <label>Password</label>
+        <input id="regPass" type="password" placeholder="min 6 chars"/>
+        <button class="primary" id="btnRegister" style="margin-top:10px">Create account</button>
+        <div class="muted" id="regMsg"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script type="module" src="account.js"></script>
+</body>
+</html>
