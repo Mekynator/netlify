@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Layerloot • Catalog</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<script>
+  window.__SUPABASE_URL__ = "PASTE_YOUR_SUPABASE_URL";
+  window.__SUPABASE_ANON_KEY__ = "PASTE_YOUR_SUPABASE_ANON_KEY";
+</script>
+
+<div class="topbar">
+  <div class="wrap topbar-row">
+    <div class="topbar-left">
+      <span>Ships within 1–3 business days (stock items)</span><span class="dot">•</span>
+      <span>Custom prints: quote in 24h</span>
+    </div>
+    <div class="topbar-right">
+      <a href="/faq.html">Need help?</a><span class="dot">•</span><a href="#payment">Card / MobilePay</a>
+    </div>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap header-row">
+    <div class="brand" onclick="location.href='/'" style="cursor:pointer">
+      <div class="logo">L</div>
+      <div><div class="brand-name">Layerloot</div><div class="brand-sub">3D Printing • Figurines • Custom Orders</div></div>
+    </div>
+
+    <div class="search">
+      <input id="q" placeholder="Search catalog..." />
+      <button id="btnSearch">Search</button>
+    </div>
+
+    <div class="actions">
+      <button class="ghost" id="btnMyOrders">My Orders</button>
+      <button class="ghost" onclick="location.href='/account.html'">Account</button>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="wrap nav-row">
+      <a class="nav-link" data-nav href="/catalog.html">Catalog</a>
+      <a class="nav-link" data-nav href="/how-it-works.html">How it works</a>
+      <a class="nav-link" data-nav href="/faq.html">FAQ</a>
+      <a class="nav-link highlight" data-nav href="/custom.html">Custom Order</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Catalog</h1>
+    <p>Browse resin, FDM, and painted options. Order takes 10 seconds (and then we talk details).</p>
+    <div class="filters">
+      <button class="chip" data-filter="Resin">Resin</button>
+      <button class="chip" data-filter="FDM">FDM</button>
+      <button class="chip" data-filter="Painted">Painted</button>
+      <button class="chip" data-filter="">All</button>
+    </div>
+  </div>
+</section>
+
+<main class="wrap">
+  <div class="grid-head">
+    <div class="muted" id="count">Loading…</div>
+    <div class="sort">
+      <label class="muted">Sort:</label>
+      <select id="sort">
+        <option value="new">Most recent</option>
+        <option value="price_low">Price: low</option>
+        <option value="price_high">Price: high</option>
+      </select>
+    </div>
+  </div>
+  <section class="grid" id="grid"></section>
+</main>
+
+<!-- Orders modal (simple) -->
+<div class="modal" id="ordersModal">
+  <div class="modal-card wide">
+    <div class="modal-head">
+      <div class="modal-title">My Orders</div>
+      <button class="ghost" id="closeOrders">✕</button>
+    </div>
+    <div id="ordersList" class="orders"></div>
+  </div>
+</div>
+
+<script type="module" src="catalog.js"></script>
+</body>
+</html>
